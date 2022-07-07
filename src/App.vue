@@ -22,7 +22,6 @@
 
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 import EnemyCard from "./components/EnemyCard.vue";
 const axios = require("axios").default;
 
@@ -40,7 +39,7 @@ export default {
   },
 
   created() {
-    console.log("creating");
+    console.log("getting data ..");
     this.getData();
   },
 
@@ -52,8 +51,14 @@ export default {
         )
         .then((response) => {
           this.enemydata = response.data.Blocks;
+
+          // sort data by enemy.name
+          this.enemydata.sort((a, b) =>
+            a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+          );
+
           this.isloading = false;
-          console.log(this.enemydata);
+          // console.log(this.enemydata);
         });
     },
   },

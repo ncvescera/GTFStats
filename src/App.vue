@@ -38,7 +38,7 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
     console.log("getting data ..");
     this.getData();
   },

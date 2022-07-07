@@ -55,42 +55,10 @@ export default {
           this.isloading = false;
           console.log(this.enemydata);
         });
-      /* let request = function (url, callback, async = true) {
-        var xhttp = new XMLHttpRequest();
-
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            // success state, execute the callback function
-            callback(this.responseText);
-          }
-        };
-
-        xhttp.open("GET", url, async);
-        xhttp.send();
-      };
-
-      request(
-        "https://raw.githubusercontent.com/UntiIted/OriginalDataBlocks/master/EnemyBalancingDataBlock.json",
-        function (response) {
-          var jsonData = JSON.parse(response);
-          console.log(jsonData.Blocks);
-          this.enemydata = jsonData.Blocks;
-          //this.$set(this.enemydata, jsonData.Blocks);
-          // do some stuff with jsonData
-        }
-      ); */
     },
   },
 };
 </script>
 
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 </style>

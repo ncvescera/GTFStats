@@ -8,7 +8,7 @@
       aria-expanded="false"
       :aria-controls="`collapse${data.persistentID}`"
     >
-      <b>{{ data.name.replace("_", " ") }}</b>
+      <b class="enemy-name">{{ data.name.replace("_", " ") }}</b>
     </div>
     <div class="collapse" :id="`collapse${data.persistentID}`">
       <div class="card-body">
@@ -123,5 +123,8 @@ export default {
 <style scoped>
 .card {
   margin: 10px;
+}
+.enemy-name {
+  font-size: larger;
 }
 </style>

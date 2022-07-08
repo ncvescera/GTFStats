@@ -1,7 +1,22 @@
 <template>
   <h3>Damage 🗡️</h3>
 
-  <p>Some code here</p>
+  <table class="table table-striped">
+    <colgroup>
+      <col class="col-10" />
+      <col class="col-2" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>Melee Attack Damage</td>
+        <td>{{ data.MeleeAttackDamage }}</td>
+      </tr>
+      <tr>
+        <td>Tentacle Attack Damage</td>
+        <td>{{ data.TentacleAttackDamage }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>

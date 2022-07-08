@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="container">
     <div class="row">
       <div class="col">
@@ -20,12 +21,14 @@
 
 
 <script>
+import NavBar from "./components/NavBar.vue";
 import EnemyCard from "./components/EnemyCard.vue";
 const axios = require("axios").default;
 
 export default {
   name: "App",
   components: {
+    NavBar,
     EnemyCard,
   },
 

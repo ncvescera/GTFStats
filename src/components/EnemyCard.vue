@@ -12,10 +12,10 @@
     </div>
     <div class="collapse" :id="`collapse${data.persistentID}`">
       <div class="card-body">
-        <HealthSection />
-        <DamageSection />
-        <CollisionSection />
-        <GlueSection />
+        <HealthSection :data="data" />
+        <DamageSection :data="data" />
+        <CollisionSection :data="data" />
+        <GlueSection :data="data" />
       </div>
     </div>
   </div>

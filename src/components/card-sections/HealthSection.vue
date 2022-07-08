@@ -1,7 +1,7 @@
 <template>
   <h3>Health 🩸</h3>
 
-  <p>Some code here</p>
+  <p>Some code here about {{ data.Health }}</p>
 </template>
 
 <script>

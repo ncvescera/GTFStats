@@ -1,18 +1,16 @@
 <template>
   <div class="row">
     <div class="col-10">
-      <h3>
-        <span class="title-section">Health 🩸</span>
-      </h3>
+      <h3>Health 🩸</h3>
     </div>
     <div class="col-2 text-end">
       <button
         class="btn"
         type="button"
         data-bs-toggle="collapse"
-        :data-bs-target="`#collapseExample-${data.persistentID}`"
+        :data-bs-target="`#collapseExample-health-${data.persistentID}`"
         aria-expanded="false"
-        :aria-controls="`collapseExample-${data.persistentID}`"
+        :aria-controls="`collapseExample-health-${data.persistentID}`"
         @click="this.isCollapsed = !this.isCollapsed"
       >
         <template v-if="this.isCollapsed">
@@ -49,7 +47,10 @@
     </div>
   </div>
 
-  <div class="collapse show" :id="`collapseExample-${data.persistentID}`">
+  <div
+    class="collapse show"
+    :id="`collapseExample-health-${data.persistentID}`"
+  >
     <table class="table table-striped">
       <colgroup>
         <col class="col-10" />

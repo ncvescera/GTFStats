@@ -37,6 +37,7 @@ export default {
   },
 
   mounted() {
+    document.title = "GTFStats"; // change title
     console.log("getting data ..");
     this.getData();
   },

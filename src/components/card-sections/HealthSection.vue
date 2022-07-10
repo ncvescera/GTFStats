@@ -53,14 +53,7 @@
           <!-- This should be the "when is staggered" -->
           <td>
             Stagger Min Damage
-
-            <span
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              title="Enemies will stagger if you do damage equal to their stagger hp number or if you destroy a body part. The stagger hp damage is cumulative, so two 20 damage shots to a big striker will cause him to stagger, even if you're hitting a bodypart that is already destroyed, and one 15+ damage hit on an in-tact body part will destroy it and stagger him immediately, so aim for fresh parts and you can keep them stun-locked!"
-            >
-              <RoundedInfo w="15" h="15" />
-            </span>
+            <RoundedInfo w="15" h="15" />
           </td>
           <td>{{ data.Health.DamageUntilHitreact }}</td>
         </tr>
@@ -73,7 +66,6 @@
 import DownArrow from "../icons/DownArrow.vue";
 import UpArrow from "../icons/UpArrow.vue";
 import RoundedInfo from "../icons/RoundedInfo.vue";
-import bootstrap from "bootstrap/dist/js/bootstrap.js";
 
 export default {
   name: "HealthSection",
@@ -88,21 +80,6 @@ export default {
     };
   },
   props: ["data"],
-  mounted() {
-    // this should be a better way to run the code when HTML is ready
-    document.onreadystatechange = () => {
-      if (document.readyState == "complete") {
-        // run code here
-        var tooltipTriggerList = [].slice.call(
-          document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        );
-        // eslint-disable-next-line no-unused-vars
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-      }
-    };
-  },
 };
 </script>
 

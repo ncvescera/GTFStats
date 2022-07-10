@@ -92,8 +92,6 @@ export default {
     //console.log(bootstrap);
     window.addEventListener("load", () => {
       // run after everything is in-place
-      console.log("inside");
-
       var tooltipTriggerList = [].slice.call(
         document.querySelectorAll('[data-bs-toggle="tooltip"]')
       );

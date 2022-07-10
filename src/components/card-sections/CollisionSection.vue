@@ -14,18 +14,15 @@
         @click="this.isCollapsed = !this.isCollapsed"
       >
         <template v-if="this.isCollapsed">
-          <DownArrow />
+          <PlusIcon />
         </template>
         <template v-else>
-          <UpArrow />
+          <MinusIcon />
         </template>
       </button>
     </div>
   </div>
-  <div
-    class="collapse show"
-    :id="`collapseExample-collision-${data.persistentID}`"
-  >
+  <div class="collapse" :id="`collapseExample-collision-${data.persistentID}`">
     <table class="table table-striped">
       <colgroup>
         <col class="col-10" />
@@ -54,14 +51,14 @@
 </template>
 
 <script>
-import DownArrow from "../icons/DownArrow.vue";
-import UpArrow from "../icons/UpArrow.vue";
+import MinusIcon from "../icons/MinusIcon.vue";
+import PlusIcon from "../icons/PlusIcon.vue";
 export default {
-  components: { DownArrow, UpArrow },
+  components: { PlusIcon, MinusIcon },
   name: "CollisionSection",
   data: function () {
     return {
-      isCollapsed: false,
+      isCollapsed: true,
     };
   },
   props: ["data"],

@@ -14,16 +14,16 @@
         @click="this.isCollapsed = !this.isCollapsed"
       >
         <template v-if="this.isCollapsed">
-          <DownArrow />
+          <PlusIcon />
         </template>
         <template v-else>
-          <UpArrow />
+          <MinusIcon />
         </template>
       </button>
     </div>
   </div>
 
-  <div class="collapse show" :id="`collapseExample-glue-${data.persistentID}`">
+  <div class="collapse" :id="`collapseExample-glue-${data.persistentID}`">
     <table class="table table-striped">
       <colgroup>
         <col class="col-10" />
@@ -44,18 +44,18 @@
 </template>
 
 <script>
-import DownArrow from "../icons/DownArrow.vue";
-import UpArrow from "../icons/UpArrow.vue";
+import PlusIcon from "../icons/PlusIcon.vue";
+import MinusIcon from "../icons/MinusIcon.vue";
 
 export default {
   name: "GlueSection",
   components: {
-    DownArrow,
-    UpArrow,
+    PlusIcon,
+    MinusIcon,
   },
   data: function () {
     return {
-      isCollapsed: false,
+      isCollapsed: true,
     };
   },
   props: ["data"],

@@ -14,19 +14,16 @@
         @click="this.isCollapsed = !this.isCollapsed"
       >
         <template v-if="this.isCollapsed">
-          <DownArrow />
+          <PlusIcon />
         </template>
         <template v-else>
-          <UpArrow />
+          <MinusIcon />
         </template>
       </button>
     </div>
   </div>
 
-  <div
-    class="collapse show"
-    :id="`collapseExample-health-${data.persistentID}`"
-  >
+  <div class="collapse" :id="`collapseExample-health-${data.persistentID}`">
     <table class="table table-striped">
       <colgroup>
         <col class="col-10" />
@@ -63,20 +60,18 @@
 </template>
 
 <script>
-import DownArrow from "../icons/DownArrow.vue";
-import UpArrow from "../icons/UpArrow.vue";
-import RoundedInfo from "../icons/RoundedInfo.vue";
+import MinusIcon from "../icons/MinusIcon.vue";
+import PlusIcon from "../icons/PlusIcon.vue";
 
 export default {
   name: "HealthSection",
   components: {
-    UpArrow,
-    DownArrow,
-    RoundedInfo,
+    MinusIcon,
+    PlusIcon,
   },
   data: function () {
     return {
-      isCollapsed: false,
+      isCollapsed: true,
     };
   },
   props: ["data"],

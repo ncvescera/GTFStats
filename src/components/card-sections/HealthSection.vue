@@ -89,17 +89,19 @@ export default {
   },
   props: ["data"],
   mounted() {
-    //console.log(bootstrap);
-    window.addEventListener("load", () => {
-      // run after everything is in-place
-      var tooltipTriggerList = [].slice.call(
-        document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      );
-      // eslint-disable-next-line no-unused-vars
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
-    });
+    // this should be a better way to run the code when HTML is ready
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        // run code here
+        var tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        // eslint-disable-next-line no-unused-vars
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      }
+    };
   },
 };
 </script>

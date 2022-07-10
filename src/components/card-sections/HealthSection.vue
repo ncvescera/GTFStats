@@ -5,6 +5,7 @@
     </div>
     <div class="col-2 text-end">
       <button
+        :id="`collapseButtonHealth-${data.persistentID}`"
         class="btn"
         type="button"
         data-bs-toggle="collapse"
@@ -50,7 +51,7 @@
           <!-- This should be the "when is staggered" -->
           <td>
             Stagger Min Damage
-            <RoundedInfo w="15" h="15" />
+            <!-- <RoundedInfo w="15" h="15" /> -->
           </td>
           <td>{{ data.Health.DamageUntilHitreact }}</td>
         </tr>
@@ -75,6 +76,13 @@ export default {
     };
   },
   props: ["data"],
+  methods: {
+    collapse() {
+      document
+        .getElementById(`collapseButtonHealth-${this.data.persistentID}`)
+        .click();
+    },
+  },
 };
 </script>
 

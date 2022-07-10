@@ -11,11 +11,15 @@
       <b class="enemy-name">{{ data.name.replace("_", " ") }}</b>
     </div>
     <div class="collapse" :id="`collapse${data.persistentID}`">
+      <button @click.stop.prevent="click()">test</button>
       <div class="card-body">
-        <HealthSection :data="data" />
-        <DamageSection :data="data" />
-        <CollisionSection :data="data" />
-        <GlueSection :data="data" />
+        <HealthSection :data="data" :ref="`health-${data.persistentID}`" />
+        <DamageSection :data="data" :ref="`damage-${data.persistentID}`" />
+        <CollisionSection
+          :data="data"
+          :ref="`collision-${data.persistentID}`"
+        />
+        <GlueSection :data="data" :ref="`glue-${data.persistentID}`" />
       </div>
     </div>
   </div>
@@ -37,6 +41,36 @@ export default {
   },
 
   props: ["data"],
+  methods: {
+    click() {
+      // element that are going to be collapsed/decollapsed
+      let collapsingList = [
+        this.$refs[`health-${this.data.persistentID}`],
+        this.$refs[`damage-${this.data.persistentID}`],
+        this.$refs[`collision-${this.data.persistentID}`],
+        this.$refs[`glue-${this.data.persistentID}`],
+      ];
+
+      // check if all element are collapsed
+      let areAllCollapsed = collapsingList.every(function (element) {
+        return element.isCollapsed === true;
+      });
+
+      // check if all element ar NOT collapsed
+      let areAllNOTCollapsed = collapsingList.every(function (element) {
+        return element.isCollapsed === false;
+      });
+
+      //if all element are collapsed OR not collapsed
+      areAllCollapsed || areAllNOTCollapsed
+        ? // collapse/decollapse all
+          collapsingList.forEach((element) => element.collapse())
+        : //(nor collapsed/decollapsed) decollapse all collapsed
+          collapsingList.forEach(
+            (element) => element.isCollapsed && element.collapse()
+          );
+    },
+  },
 };
 </script>
 

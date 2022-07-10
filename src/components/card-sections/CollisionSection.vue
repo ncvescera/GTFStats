@@ -5,6 +5,7 @@
     </div>
     <div class="col-2 text-end">
       <button
+        :id="`collapseButtonCollision-${data.persistentID}`"
         class="btn"
         type="button"
         data-bs-toggle="collapse"
@@ -62,6 +63,13 @@ export default {
     };
   },
   props: ["data"],
+  methods: {
+    collapse() {
+      document
+        .getElementById(`collapseButtonCollision-${this.data.persistentID}`)
+        .click();
+    },
+  },
 };
 </script>
 

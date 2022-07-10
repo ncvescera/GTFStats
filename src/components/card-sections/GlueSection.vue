@@ -5,6 +5,7 @@
     </div>
     <div class="col-2 text-end">
       <button
+        :id="`collapseButtonGlue-${data.persistentID}`"
         class="btn"
         type="button"
         data-bs-toggle="collapse"
@@ -59,6 +60,13 @@ export default {
     };
   },
   props: ["data"],
+  methods: {
+    collapse() {
+      document
+        .getElementById(`collapseButtonGlue-${this.data.persistentID}`)
+        .click();
+    },
+  },
 };
 </script>
 

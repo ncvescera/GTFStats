@@ -20,7 +20,7 @@
               class="nav-link active"
               aria-current="page"
               href="#"
-              @click="this.$emit('pageChange', 0)"
+              @click="triggerPageChangeEvent(pagesIds['enemies'])"
               >Enemies</a
             >
           </li>
@@ -40,7 +40,7 @@
                 <a
                   class="dropdown-item"
                   href="#"
-                  @click="this.$emit('pageChange', 1)"
+                  @click="triggerPageChangeEvent(pagesIds['melee'])"
                   >Melee</a
                 >
               </li>
@@ -66,11 +66,22 @@
 
 <script>
 import GitHub from "./icons/GitHub.vue";
+import { pagesIds } from "../commonData/pagesIds";
 
 export default {
   name: "NavBar",
   components: {
     GitHub,
+  },
+  methods: {
+    triggerPageChangeEvent(newPAge) {
+      this.$emit("pageChange", newPAge);
+    },
+  },
+  data: function () {
+    return {
+      pagesIds: pagesIds, // need to do this so pageIds is accessible inside DOOM
+    };
   },
 };
 </script>

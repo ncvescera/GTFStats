@@ -1,7 +1,7 @@
 <template>
   <NavBar @pageChange="updateActualPage" />
 
-  <template v-if="actualPage == 0">
+  <template v-if="actualPage == pagesIds['enemies']">
     <EnemyPage />
   </template>
   <template v-else> Io sono un contenuto di prova !! </template>
@@ -15,6 +15,7 @@
 import NavBar from "./components/NavBar.vue";
 import EnemyPage from "./components/Enemies/EnemyPage.vue";
 import FooterBar from "./components/FooterBar.vue";
+import { pagesIds } from "./commonData/pagesIds";
 
 export default {
   name: "App",
@@ -26,11 +27,14 @@ export default {
 
   data: function () {
     return {
-      actualPage: 1,
+      pagesIds: pagesIds, // need to do this so pageIds is accessible inside DOOM
+      actualPage: pagesIds["enemies"],
     };
   },
   mounted() {
     document.title = "GTFStats"; // change title
+    console.log(pagesIds);
+    console.log(pagesIds["enemies"]);
   },
   methods: {
     updateActualPage(value) {

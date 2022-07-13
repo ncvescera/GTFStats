@@ -1,35 +1,15 @@
-<template>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <template v-if="isloading">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        </template>
-        <template v-else>
-          <EnemyCard v-for="enemy in enemydata" :key="enemy" :data="enemy" />
-        </template>
-      </div>
-    </div>
-  </div>
-</template>
+<template>Io sono un testo di prova</template>
 
 
 
 <script>
-import EnemyCard from "./EnemyCard.vue";
-const axios = require("axios").default;
-
 export default {
-  name: "EnemyPage",
-  components: {
+  name: "MeleePage",
+  /* components: {
     EnemyCard,
-  },
+  }, */
 
-  data: function () {
+  /* data: function () {
     return {
       isloading: true,
       enemydata: [],
@@ -59,7 +39,7 @@ export default {
           // console.log(this.enemydata);
         });
     },
-  },
+  },*/
 };
 </script>
 

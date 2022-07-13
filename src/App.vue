@@ -1,19 +1,15 @@
 <template>
   <NavBar @pageChange="updateActualPage" />
 
-  <template v-if="actualPage == pagesIds['enemies']">
-    <EnemyPage />
-  </template>
-  <template v-else> Io sono un contenuto di prova !! </template>
+  <component v-bind:is="actualPage"></component>
 
   <FooterBar />
 </template>
 
-
-
 <script>
 import NavBar from "./components/NavBar.vue";
 import EnemyPage from "./components/Enemies/EnemyPage.vue";
+import MeleePage from "./components/Melee/MeleePage.vue";
 import FooterBar from "./components/FooterBar.vue";
 import { pagesIds } from "./commonData/pagesIds";
 
@@ -22,12 +18,12 @@ export default {
   components: {
     NavBar,
     EnemyPage,
+    MeleePage,
     FooterBar,
   },
 
   data: function () {
     return {
-      pagesIds: pagesIds, // need to do this so pageIds is accessible inside DOOM
       actualPage: pagesIds["enemies"],
     };
   },

@@ -38,4 +38,7 @@ nav {
 p {
   margin-bottom: 5px;
 }
+#monospace {
+  font-family: "Courier New", monospace;
+}
 </style>

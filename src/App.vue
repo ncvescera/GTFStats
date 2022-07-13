@@ -16,6 +16,7 @@
       </div>
     </div>
   </div>
+  <FooterBar />
 </template>
 
 
@@ -23,6 +24,7 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 import EnemyCard from "./components/EnemyCard.vue";
+import FooterBar from "./components/FooterBar.vue";
 const axios = require("axios").default;
 
 export default {
@@ -30,6 +32,7 @@ export default {
   components: {
     NavBar,
     EnemyCard,
+    FooterBar,
   },
 
   data: function () {

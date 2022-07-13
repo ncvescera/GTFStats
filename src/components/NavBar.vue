@@ -16,7 +16,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-0 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Enemies</a>
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="#"
+              @click="this.$emit('pageChange', 0)"
+              >Enemies</a
+            >
           </li>
           <li class="nav-item dropdown">
             <a
@@ -30,7 +36,14 @@
               Weapons
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Melee</a></li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  @click="this.$emit('pageChange', 1)"
+                  >Melee</a
+                >
+              </li>
               <li><a class="dropdown-item" href="#">Fire Arms</a></li>
             </ul>
           </li>

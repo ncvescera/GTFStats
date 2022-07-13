@@ -1,17 +1,17 @@
 <template>
   <div class="row">
     <div class="col-10">
-      <h3>C-Foam 💦</h3>
+      <h3>Damage 🗡️</h3>
     </div>
     <div class="col-2 text-end">
       <button
-        :id="`collapseButtonGlue-${data.persistentID}`"
+        :id="`collapseButtonDamage-${data.persistentID}`"
         class="btn"
         type="button"
         data-bs-toggle="collapse"
-        :data-bs-target="`#collapseExample-glue-${data.persistentID}`"
+        :data-bs-target="`#collapseExample-damage-${data.persistentID}`"
         aria-expanded="false"
-        :aria-controls="`collapseExample-glue-${data.persistentID}`"
+        :aria-controls="`collapseExample-damage-${data.persistentID}`"
         @click="this.isCollapsed = !this.isCollapsed"
       >
         <template v-if="this.isCollapsed">
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="collapse" :id="`collapseExample-glue-${data.persistentID}`">
+  <div class="collapse" :id="`collapseExample-damage-${data.persistentID}`">
     <table class="table table-striped">
       <colgroup>
         <col class="col-10" />
@@ -32,12 +32,12 @@
       </colgroup>
       <tbody>
         <tr>
-          <td>Glue Tolerance</td>
-          <td>{{ data.GlueTolerance }}</td>
+          <td>Melee Attack Damage</td>
+          <td>{{ data.MeleeAttackDamage }}</td>
         </tr>
         <tr>
-          <td>Glue FadeOut Time</td>
-          <td>{{ data.GlueFadeOutTime }}</td>
+          <td>Tentacle Attack Damage</td>
+          <td>{{ data.TentacleAttackDamage }}</td>
         </tr>
       </tbody>
     </table>
@@ -45,15 +45,12 @@
 </template>
 
 <script>
-import PlusIcon from "../icons/PlusIcon.vue";
-import MinusIcon from "../icons/MinusIcon.vue";
+import MinusIcon from "../../icons/MinusIcon.vue";
+import PlusIcon from "../../icons/PlusIcon.vue";
 
 export default {
-  name: "GlueSection",
-  components: {
-    PlusIcon,
-    MinusIcon,
-  },
+  components: { PlusIcon, MinusIcon },
+  name: "DamageSection",
   data: function () {
     return {
       isCollapsed: true,
@@ -63,7 +60,7 @@ export default {
   methods: {
     collapse() {
       document
-        .getElementById(`collapseButtonGlue-${this.data.persistentID}`)
+        .getElementById(`collapseButtonDamage-${this.data.persistentID}`)
         .click();
     },
   },

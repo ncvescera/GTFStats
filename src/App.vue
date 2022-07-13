@@ -1,21 +1,11 @@
 <template>
-  <NavBar />
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <template v-if="isloading">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        </template>
-        <template v-else>
-          <EnemyCard v-for="enemy in enemydata" :key="enemy" :data="enemy" />
-        </template>
-      </div>
-    </div>
-  </div>
+  <NavBar @pageChange="updateActualPage" />
+
+  <template v-if="actualPage == 0">
+    <EnemyPage />
+  </template>
+  <template v-else> Io sono un contenuto di prova !! </template>
+
   <FooterBar />
 </template>
 
@@ -23,48 +13,28 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
-import EnemyCard from "./components/EnemyCard.vue";
+import EnemyPage from "./components/Enemies/EnemyPage.vue";
 import FooterBar from "./components/FooterBar.vue";
-const axios = require("axios").default;
 
 export default {
   name: "App",
   components: {
     NavBar,
-    EnemyCard,
+    EnemyPage,
     FooterBar,
   },
 
   data: function () {
     return {
-      isloading: true,
-      enemydata: [],
+      actualPage: 1,
     };
   },
-
   mounted() {
     document.title = "GTFStats"; // change title
-    console.log("getting data ..");
-    this.getData();
   },
-
   methods: {
-    getData() {
-      axios
-        .get(
-          "https://raw.githubusercontent.com/UntiIted/OriginalDataBlocks/master/EnemyBalancingDataBlock.json"
-        )
-        .then((response) => {
-          this.enemydata = response.data.Blocks;
-
-          // sort data by enemy.name
-          this.enemydata.sort((a, b) =>
-            a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-          );
-
-          this.isloading = false;
-          // console.log(this.enemydata);
-        });
+    updateActualPage(value) {
+      this.actualPage = value;
     },
   },
 };

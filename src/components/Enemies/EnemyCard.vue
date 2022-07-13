@@ -42,7 +42,7 @@ import CollisionSection from "./card-sections/CollisionSection.vue";
 import DamageSection from "./card-sections/DamageSection.vue";
 import GlueSection from "./card-sections/GlueSection.vue";
 import HealthSection from "./card-sections/HealthSection.vue";
-import EyeOpen from "./icons/EyeOpen.vue";
+import EyeOpen from "../icons/EyeOpen.vue";
 
 export default {
   name: "EnemyCard",

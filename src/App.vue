@@ -29,8 +29,6 @@ export default {
   },
   mounted() {
     document.title = "GTFStats"; // change title
-    console.log(pagesIds);
-    console.log(pagesIds["enemies"]);
   },
   methods: {
     updateActualPage(value) {

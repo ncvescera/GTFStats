@@ -8,8 +8,8 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
-import EnemyPage from "./components/Enemies/EnemyPage.vue";
-import MeleePage from "./components/Melee/MeleePage.vue";
+import EnemyPage from "./components/pages/Enemies/EnemyPage.vue";
+import MeleePage from "./components/pages/Melee/MeleePage.vue";
 import FooterBar from "./components/FooterBar.vue";
 import { pagesIds } from "./commonData/pagesIds";
 

@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import MinusIcon from "../../icons/MinusIcon.vue";
-import PlusIcon from "../../icons/PlusIcon.vue";
+import MinusIcon from "../../../icons/MinusIcon.vue";
+import PlusIcon from "../../../icons/PlusIcon.vue";
 
 export default {
   components: { PlusIcon, MinusIcon },

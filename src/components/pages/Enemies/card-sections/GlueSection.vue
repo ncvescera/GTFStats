@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import PlusIcon from "../../icons/PlusIcon.vue";
-import MinusIcon from "../../icons/MinusIcon.vue";
+import PlusIcon from "../../../icons/PlusIcon.vue";
+import MinusIcon from "../../../icons/MinusIcon.vue";
 
 export default {
   name: "GlueSection",
